@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thyneleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+</head>
+<body>
+<div style="text-align: center;">
+HELLO THIS IS PAGE ABOUT INDEXES
+<div th:each="person :${people}">
+<!--foreach-->
+    <h1> <a th:href ="@{/people/{id}(id = ${person.getId()})}"
+            th:text="${person.getName() + ' , ' + person.getAge()} " >user</a></h1>
+</div>
+<br/>
+<hr/>
+    <h1><a href="/people/new">Create new person</a></h1>
+</div>>
+</body>
+</html>

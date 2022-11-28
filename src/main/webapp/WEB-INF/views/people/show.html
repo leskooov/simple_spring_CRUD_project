@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thyneleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOW ME A PEOPLE</title>
+</head>
+<body>
+<div style="text-align: center;">
+<h1>
+    <span style="color: red; font-size: large; "><h1>My name is:</h1> </span>
+    <p th:text="${person.getName() + ' i am ' + person.getAge() + ' years old'}">VALUE</p>
+<!--<br/>-->
+    <span style="color: red; font-size: large; "><h1>My ID is:</h1> </span>
+    <p th:text="${person.getId()}">VALUE</p>
+<!--<br/>-->
+    <span style="color: red; font-size: large; "><h1>My email :</h1> </span>
+    <p th:text="${person.getEmail()}">VALUE</p>
+    <!--<br/>-->
+    <span style="color: red; font-size: large; "><h1>My favorite hobby is:</h1> </span>
+    <p th:text="${person.getNameHobby()}">VALUE</p>
+<!--<br/>-->
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit info about this person</a>
+<br/><br/><br/>
+<form th:method ="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <input type="submit" value="Delete info about people">
+</form>
+
+    <form>
+        <input type="button" onClick="window.location.href = '/people';" value="Go back to main page"/>
+    </form>
+    <br/>
+</h1>
+</div>>
+</body>
+</html>
