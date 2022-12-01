@@ -18,6 +18,9 @@
     <!--<br/>-->
     <span style="color: red; font-size: large; "><h1>My favorite hobby is:</h1> </span>
     <p th:text="${person.getNameHobby()}">VALUE</p>
+<!--    <br/>-->
+    <span style="color: red; font-size: large; "><h1>My address  is:</h1> </span>
+    <p th:text="${person.getAddress()}">VALUE</p>
 <!--<br/>-->
 <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit info about this person</a>
 <br/><br/><br/>
