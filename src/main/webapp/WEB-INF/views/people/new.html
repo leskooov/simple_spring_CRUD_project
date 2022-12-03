@@ -1,46 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thyneleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>NEW PERSON </title>
+    <title>New person</title>
 </head>
 <body>
-<div style="text-align: center;">
+
 <form th:method="POST" th:action="@{/people}" th:object="${person}">
-    <br/><br/>
-    <br/><br/>
-
-
-    <label for="name">Enter name</label>
+    <label for="name">Enter name: </label>
     <input type="text" th:field="*{name}" id="name"/>
-    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
-    <br/><br/>
-
-    <label for="age">Enter age</label>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <label for="age">Enter age: </label>
     <input type="text" th:field="*{age}" id="age"/>
-    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Name error</div>
-
-    <br/><br/>
-
-    <label for="email">Enter email</label>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+    <br/>
+    <label for="email">Enter email: </label>
     <input type="text" th:field="*{email}" id="email"/>
-    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name error</div>
-
-    <br/><br/>
-    <label for="name">Enter hobby's name</label>
-    <input type="text" th:field="*{nameHobby}" id="nameHobby"/>
-    <div style="color:red" th:if="${#fields.hasErrors('nameHobby')}" th:errors="*{nameHobby}">Name error</div>
-
-    <br/><br/>
-
-    <label for="address">Enter address</label>
-    <input type="text" th:field="*{address}" id="address"/>
-    <div style="color:red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}">address error</div>
-
-    <br/><br/>
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+    <br/>
     <input type="submit" value="Create!"/>
-
 </form>
-</div>
+
 </body>
 </html>
